@@ -51,20 +51,21 @@
         
         function onDeviceReady() {
             var size = 0;
-            window.requestFileSystem(LocalFileSystem.PERSISTENT, size, onFileSysSuccess, onFileSysError);
+            window.requestFileSystem(LocalFileSystem.TEMPORARY, size, onFileSysSuccess, onFileSysError);
         }
         
         function onFileSysError(error) {
-            alert('Error code: ' + error.message);
+            alert('Error code: ' + error.code);
         } 
         
         function onFileSysSuccess(fileSystem) {
             var reader = fileSystem.root.createReader();
-            reader.readEntries(parseDirectories,onFileSysError);
+            reader.readEntries(parseDirectories, onFileSysError);
         }
         
         function parseDirectories(entries) {
             alert('Parse directories...');
+            alert(entries.length);
             var str = '<ul>';
             for (var i = 0, len = entries.length; i < len; i++) {
                 if (entries[i].isDirectory) {

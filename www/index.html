@@ -68,9 +68,9 @@
             alert(entries.length);
             var str = '<ul>';
             for (var i = 0, len = entries.length; i < len; i++) {
-                if (entries[i].isDirectory) {
+                //if (entries[i].isDirectory) {
                     str += '<li>' + entries[i].fullPath + '</li>';
-                }
+                //}
             }
             str += '</ul>';
             document.getElementById("filesList").innerHTML += str;

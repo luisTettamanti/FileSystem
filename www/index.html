@@ -61,10 +61,10 @@
         function onFileSysSuccess(fileSystem) {
             var reader = fileSystem.root.createReader();
             reader.readEntries(parseDirectories,onFileSysError);
-            alert('Success...');
         }
         
         function parseDirectories(entries) {
+            alert('Parse directories...');
             var str = '<ul>';
             for (var i = 0, len = entries.length; i < len; i++) {
                 if (entries[i].isDirectory) {

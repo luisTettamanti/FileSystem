@@ -51,7 +51,7 @@
         
         function onDeviceReady() {
             var size = 0;
-            window.requestFileSystem(LocalFileSystem.TEMPORARY, size, onFileSysSuccess, onFileSysError);
+            window.requestFileSystem(LocalFileSystem.PERSISTENT, size, onFileSysSuccess, onFileSysError);
         }
         
         function onFileSysError(error) {
